@@ -1,12 +1,12 @@
 .blockShape {
-    background: #34dbeb;
-    border: none;
-    height: 50px;
-    width: 50px;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
+	background: #34dbeb;
+	border: none;
+	height: 50px;
+	width: 50px;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 22px;
+	font-weight: bold;
 }

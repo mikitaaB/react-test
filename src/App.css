@@ -1,11 +1,11 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .blocksContainer {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10%;
-  height: 90vh;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10%;
+	height: 90vh;
+	align-items: center;
 }
