@@ -1,0 +1,13 @@
+.timerShape {
+    background: #000;
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
