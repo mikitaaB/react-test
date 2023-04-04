@@ -1,51 +1,50 @@
-import { useEffect, useState } from "react"
-import s from "./Timer.module.css"
+import { useCallback, useEffect, useState } from "react"
+import s from "./timer.module.css"
 
 type TimerPropsType = {
-	timerClassName: any
+	timerClassName: any,
+	isTimerClicked: boolean,
+	setIsTimerClicked: (val: boolean) => void
 }
 
-export const Timer = ({ timerClassName }: TimerPropsType) => {
-	const [value, setValue] = useState<number|string>("START");
+export const Timer = (props: TimerPropsType) => {
+	const { timerClassName, isTimerClicked, setIsTimerClicked } = props;
+	const [value, setValue] = useState<number>(5);
 	const [timerId, setTimerId] = useState<number | undefined>(undefined);
 
 	const onClickButton = () => {
-		typeof value === "string" ? start() : stop();
+		setIsTimerClicked(true);
+		start();
 	}
 
 	const start = () => {
 		setValue(5);
 		const timeId = +setInterval(() => {
-			setValue((prevState: any) => {
-				if (typeof prevState === "number") {
-					return prevState - 1;
-				}
-				return prevState;
-			});
+			setValue(prevState => prevState - 1);
 		}, 1000);
-		setTimerId(timeId)
+		setTimerId(timeId);
 	}
 
-	const stop = () => {
+	const stop = useCallback(() => {
 		clearInterval(timerId);
-		setTimerId(undefined)
-		setValue("START");
-	}
+		setTimerId(undefined);
+		setIsTimerClicked(false);
+	}, [timerId, setIsTimerClicked]);
+
+	const buttonValue = isTimerClicked ? value : "START";
 
 	useEffect(() => {
-		if (typeof value === "number" && value === 0) {
+		if (isTimerClicked && value === 0) {
 			stop();
 		}
-	}, [value]);
+	}, [value, isTimerClicked, stop]);
 
 	return (
-		<div style={timerClassName}>
-			<button
-				className={s.timerShape}
-				disabled={!!timerId}
-				onClick={onClickButton}>
-				{value}
-			</button>
-		</div>
+		<button
+			className={`${s.timerShape} ${timerClassName}`}
+			disabled={!!timerId}
+			onClick={onClickButton}>
+			{buttonValue}
+		</button>
 	)
 }
