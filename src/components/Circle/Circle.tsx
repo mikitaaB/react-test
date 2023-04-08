@@ -1,12 +1,11 @@
+import { memo } from "react"
 import s from "./circle.module.css"
 
 type CirclePropsType = {
-    isTimerClicked: boolean
+    isStartMovement: boolean,
+    componentRef: React.Ref<HTMLDivElement>
 }
 
-export const Circle = ({ isTimerClicked }: CirclePropsType) => {
-
-    return (
-        <div className={s.circle}></div>
-    )
-}
+export const Circle = memo(({ isStartMovement, componentRef }: CirclePropsType) => (
+    <div className={isStartMovement ? s.circle : s.circle_hidden} ref={componentRef}></div>
+))

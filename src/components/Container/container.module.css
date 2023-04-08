@@ -1,7 +1,6 @@
 .blocksContainer {
 	display: flex;
-	justify-content: space-between;
-	padding: 0 10%;
+	justify-content: space-around;
 	height: 90vh;
 	align-items: center;
 }
@@ -12,15 +11,11 @@
 }
 
 @keyframes updown {
-	0%, 75%, 100% {
-		transform: translateY(0);
+	0%,
+	100% {
+		transform: translate(0, -40vh);
 	}
-
-	25% {
-		transform: translateY(calc(40vh - 30px));
-	}
-
-	75% {
-		transform: translateY(calc(-40vh + 30px));
+	50% {
+		transform: translate(0, 40vh);
 	}
 }

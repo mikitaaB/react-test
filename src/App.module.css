@@ -1,5 +1,8 @@
+.app {
+	min-height: 100vh;
+}
+
 .timerPosition {
-	bottom: 0;
-	left: 50%;
-	position: absolute;
+	display: flex;
+    justify-content: center;
 }

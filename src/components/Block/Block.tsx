@@ -1,10 +1,14 @@
+import { memo } from "react"
 import s from "./block.module.css"
 
 type BlockPropsType = {
     blockClass: any,
-    blockTitle: number
+    blockTitle: number,
+    componentRef: React.Ref<HTMLDivElement>
 }
 
-export const Block = ({ blockClass, blockTitle }: BlockPropsType) => (
-    <div className={`${s.blockShape} ${blockClass}`}>{blockTitle}</div>
-)
+export const Block = memo(({ blockClass, blockTitle, componentRef }: BlockPropsType) => (
+    <div className={`${s.blockShape} ${blockClass}`} ref={componentRef}>
+        {blockTitle}
+    </div>
+))

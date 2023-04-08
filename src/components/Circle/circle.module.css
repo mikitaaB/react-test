@@ -1,8 +1,14 @@
+.circle_hidden {
+    display: none;
+}
+
 .circle {
+    top: 0;
+    left: 0;
+    display: flex;
     position: absolute;
     height: 25px;
     width: 25px;
     border-radius: 50%;
     background: #ABFF6F;
-    display: none;
 }

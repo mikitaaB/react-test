@@ -4,15 +4,19 @@ import { Timer } from './components/Timer/Timer';
 import s from './App.module.css';
 
 function App() {
-	const [isTimerClicked, setIsTimerClicked] = useState<boolean>(false);
+	const [isStartMovement, setIsStartMovement] = useState<boolean>(false);
 
 	return (
-		<div>
-			<Container isTimerClicked={isTimerClicked} />
-			<Timer
-				timerClassName={s.timerPosition}
-				isTimerClicked={isTimerClicked}
-				setIsTimerClicked={setIsTimerClicked} />
+		<div className={s.app}>
+			<Container
+				animationDuration={2}
+				isStartMovement={isStartMovement} />
+			<div className={s.timerPosition}>
+				<Timer
+					time={5}
+					animationDuration={2}
+					setIsStartMovement={setIsStartMovement} />
+			</div>
 		</div>
 	);
 }
