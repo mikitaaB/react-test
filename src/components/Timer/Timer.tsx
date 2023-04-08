@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useState } from "react"
-import s from "./Timer.module.css"
+import s from "./timer.module.css"
 
 type TimerPropsType = {
 	time: number,
