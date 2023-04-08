@@ -1,5 +1,5 @@
 import { memo } from "react"
-import s from "./circle.module.css"
+import s from "./Circle.module.css"
 
 type CirclePropsType = {
     isStartMovement: boolean,

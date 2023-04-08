@@ -1,5 +1,5 @@
 .timerShape {
-	background: #000;
+	background-color: #000;
 	border: none;
 	height: 50px;
 	width: 100px;
@@ -13,7 +13,7 @@
 }
 
 .timerShape:disabled {
-	background: #ececec;
+	background-color: #ececec;
 	color: #000;
 	border: 1px solid #000;
 }

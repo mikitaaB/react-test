@@ -1,5 +1,5 @@
 import { memo } from "react"
-import s from "./block.module.css"
+import s from "./Block.module.css"
 
 type BlockPropsType = {
     blockClass: any,

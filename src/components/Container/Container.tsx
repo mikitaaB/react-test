@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useRef } from "react"
 import { Block } from "../Block/Block"
 import { Circle } from "../Circle/Circle"
-import s from "./container.module.css"
+import s from "./Container.module.css"
 
 type ContainerPropsType = {
 	animationDuration: number,
